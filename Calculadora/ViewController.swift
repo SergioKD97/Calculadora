@@ -3,7 +3,7 @@
 //  Calculadora
 //
 //  Created by CETYS on 26/09/17.
-//  Copyright © 2017 CETYS. All rights reserved.
+//  Copyrigh © 2017 CETYS. All rights reserved.
 //
 
 import UIKit
