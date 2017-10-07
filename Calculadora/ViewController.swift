@@ -29,20 +29,20 @@ class ViewController: UIViewController {
     
     @IBAction func punto() {
         let numero : NSString = pantalla.text! as NSString
-        
-        
+        var no = 0
         
         //for para no repetir puntos
-        for i in 0...numero.length{
-            let rango = NSMakeRange(i, i+1)
+        for i in 0...numero.length-1{
+            let rango = NSMakeRange(i, 1)
             
             if(numero.length > 2 && numero.substring(with: rango) == "."){
-            print("s")
+                no = 1
             }
-            
-            }
+        }
         
+        if(no == 0){
             pantalla.text = pantalla.text! + "."
+        }
             
     }
     
@@ -147,7 +147,13 @@ class ViewController: UIViewController {
         print(operacion)
     }
     
-    func cambiaIcono(digito : String){
+   
+    
+    
+    @IBAction func numeroPulsado(_ sender: UIButton) {
+        var digito : String! = sender.currentTitle
+        
+        
         
         if(digito == "7️⃣"){
             digito = "7"
@@ -179,14 +185,6 @@ class ViewController: UIViewController {
         if(digito == "0️⃣"){
             digito = "0"
         }
-        
-    }
-    
-    @IBAction func numeroPulsado(_ sender: UIButton) {
-        var digito : String! = sender.currentTitle
-        
-        
-        cambiaIcono(digito: <#T##String#>)
         
         
         if elUsuarioEstaEnMedioDeLaEscriturDeUnNumero{
